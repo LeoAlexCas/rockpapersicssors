@@ -16,7 +16,7 @@ botonPapel.addEventListener("click", seleccionPapel);
 botonTijeras.addEventListener("click", seleccionTijeras);
 
 var play = document.getElementById("jugar");
-play.addEventListener("click",);
+play.addEventListener("click", winOrLose);
 
 function seleccionPiedra(){
     jugador = "piedra";
@@ -49,6 +49,8 @@ function cpuSelection(){
 }
 
 function winOrLose () {
+    cpuSelection();
+
     if(jugador == "piedra" && rival == "papel"){
         chosenByCpu.innerHTML = "Papel";
         alert("Has perdido! (Piedra vs Papel)");
