@@ -16,7 +16,7 @@ botonPapel.addEventListener("click", seleccionPapel);
 botonTijeras.addEventListener("click", seleccionTijeras);
 
 var play = document.getElementById("jugar");
-play.addEventListener("click",);
+play.addEventListener("click", winOrLose);
 
 function seleccionPiedra(){
     jugador = "piedra";
@@ -34,8 +34,6 @@ function seleccionTijeras(){
     chosenByPlayer.innerHTML = "Tijeras";
 }
 
-
-
 function cpuSelection(){
     if(random == 1 || random == 3 || random == 5){
         rival = "piedra";
@@ -47,6 +45,8 @@ function cpuSelection(){
         return false;
     }
 }
+
+cpuSelection();
 
 function winOrLose () {
     if(jugador == "piedra" && rival == "papel"){
