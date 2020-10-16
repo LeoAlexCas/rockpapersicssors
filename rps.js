@@ -71,6 +71,6 @@ function winOrLose () {
         setTimeout(alert("Has perdido!"),1000);
     } else {
         chosenByCpu.innerHTML = rival;
-        alert("Empate! " + jugador + " " + "vs " + rival);
+        setTimeout(alert("Empate! " + jugador + " " + "vs " + rival), 1000);
     }
 }
