@@ -53,22 +53,22 @@ function winOrLose () {
 
     if(jugador == "piedra" && rival == "papel"){
         chosenByCpu.innerHTML = "Papel";
-        alert("Has perdido! (Piedra vs Papel)");
+        setTimeout(alert("Has perdido!"),1000); 
     } else if(jugador == "piedra" && rival == "tijeras"){
         chosenByCpu.innerHTML = "Tijeras";
-        alert("Has ganado! (Piedra vs Tijeras)");
+        setTimeout(alert("Has ganado!"),1000);
     } else if(jugador == "papel" && rival == "tijeras") {
         chosenByCpu.innerHTML = "Tijeras";
-        alert("Has perdido! (Papel vs Tijeras)");
+        setTimeout(alert("Has perdido!"),1000);
     } else if(jugador == "papel" && rival == "piedra") {
         chosenByCpu.innerHTML = "Piedra";
-        alert("Has ganado! (Papel vs Piedra)");
+        setTimeout(alert("Has ganado!"),1000);
     } else if(jugador == "tijeras" && rival == "papel"){
         chosenByCpu.innerHTML = "Papel";
-        alert("Has ganado! (Tijeras vs Papel)");
+        setTimeout(alert("Has ganado!"),1000);
     } else if(jugador == "tijeras" && rival == "piedra"){
         chosenByCpu.innerHTML = "Piedra";
-        alert("Has perdido! (Tijeras vs Piedra)");
+        setTimeout(alert("Has perdido!"),1000);
     } else {
         chosenByCpu.innerHTML = rival;
         alert("Empate! " + jugador + " " + "vs " + rival);
