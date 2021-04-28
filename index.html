@@ -1,52 +1,25 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Rock, Paper Sicssors</title>
 </head>
 <body>
     <h1>Rock, Paper, Sicssors</h1>
     <section id="seleccion">
-        <input type="button" value="piedra" id="piedra">
-        <input type="button" value="papel" id="papel">
-        <input type="button" value="tijeras" id="tijeras">
+        <input type="button" value="piedra" id="piedra" onclick="playerSelection(1)">
+        <input type="button" value="papel" id="papel" onclick="playerSelection(2)">
+        <input type="button" value="tijeras" id="tijeras" onclick="playerSelection(3)">
     </section>
     <section>
         <p>Seleccionaste: <span id="tu"></span></p>
     </section>
-    <input type="button" value="Jugar!" id="jugar">
+    <input type="button" value="Jugar!" id="jugar" onclick="rps()">
     <section id="oponente">
         <p>CPU: <span id="resultadoPc"></span></p>
     </section>
     <script src="rps.js"></script>
 </body>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Rock, Paper, Sicssors</h1>
-    <section id="seleccion">
-        <input type="button" value="piedra" id="piedra">
-        <input type="button" value="papel" id="papel">
-        <input type="button" value="tijeras" id="tijeras">
-    </section>
-    <section>
-        <p>Seleccionaste: <span id="tu"></span></p>
-    </section>
-    <input type="button" value="Jugar!" id="jugar">
-    <section id="oponente">
-        <p>CPU: <span id="resultadoPc"></span></p>
-    </section>
-    <script src="rps.js"></script>
-</body>
->>>>>>> ae3cccae2b2bde926c28e623fd12d1d4f4ad17c3
 </html>
