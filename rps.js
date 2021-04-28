@@ -22,37 +22,22 @@ function playerSelection(n) {
 }
 
 function results() {
-    if(playerChoice == 'piedra' && cpuChoice == 'piedra') {
+    if( playerChoice == 'piedra' && cpuChoice == 'piedra' ||
+        playerChoice == 'papel' && cpuChoice == 'papel'   ||
+        playerChoice == 'tijera' && cpuChoice == 'tijera') {
         alert('Has empatado');
     }
-    if(playerChoice == 'piedra' && cpuChoice == 'papel') {
+    if( playerChoice == 'piedra' && cpuChoice == 'papel' ||
+        playerChoice == 'papel' && cpuChoice == 'tijera' ||
+        playerChoice == 'tijera' && cpuChoice == 'piedra') {
         alert('has perdido');
     }
-    if(playerChoice == 'piedra' && cpuChoice == 'tijera') {
+    if( playerChoice == 'piedra' && cpuChoice == 'tijera'||
+        playerChoice == 'papel' && cpuChoice == 'piedra' ||
+        playerChoice == 'tijera' && cpuChoice == 'papel') {
         alert('has ganado');
-    }
-    
-    if(playerChoice == 'papel' && cpuChoice == 'piedra') {
-        alert('has ganado');
-    }
-    if(playerChoice == 'papel' && cpuChoice == 'papel') {
-        alert('has empatado');
-    }
-    if(playerChoice == 'papel' && cpuChoice == 'tijera') {
-        alert('has perdido');
-    }
-    
-    if(playerChoice == 'tijera' && cpuChoice == 'piedra') {
-        alert('has perdido');
-    }
-    if(playerChoice == 'tijera' && cpuChoice == 'papel') {
-        alert('has ganado');
-    }
-    if(playerChoice == 'tijera' && cpuChoice == 'tijera') {
-        alert('has empatado');
     }
 }
-
 
 function rps () {
     if(!playerChoice) {
