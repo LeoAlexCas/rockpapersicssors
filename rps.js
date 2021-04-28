@@ -1,74 +1,87 @@
-var randomNumber = Math.random()*10;
-var random = Math.floor(randomNumber);
-var rival;
+let playerChoice;
+let cpuChoice;
 
-var botonPiedra = document.getElementById("piedra");
-var botonPapel = document.getElementById("papel");
-var botonTijeras = document.getElementById("tijeras");
-
-var jugador;
-
-var chosenByCpu = document.getElementById("resultadoPc");
-var chosenByPlayer = document.getElementById("tu");
-
-botonPiedra.addEventListener("click", seleccionPiedra);
-botonPapel.addEventListener("click", seleccionPapel);
-botonTijeras.addEventListener("click", seleccionTijeras);
-
-var play = document.getElementById("jugar");
-play.addEventListener("click", winOrLose);
-
-function seleccionPiedra(){
-    jugador = "piedra";
-    chosenByPlayer.innerHTML = "Piedra";
-
-}
-
-function seleccionPapel(){
-    jugador = "papel";
-    chosenByPlayer.innerHTML = "Papel";
-}
-
-function seleccionTijeras(){
-    jugador = "tijeras";
-    chosenByPlayer.innerHTML = "Tijeras";
-}
-
-function cpuSelection(){
-    if(random == 1 || random == 3 || random == 5){
-        rival = "piedra";
-    } else if ( random == 2 || random == 7 || random == 8){
-        rival = "papel";
-    } else if (random == 4 || random == 6 || random == 9) {
-        rival = "tijeras"
-    } else {
-        return false;
+function playerSelection(n) {
+    switch(n) {
+        case 1: 
+            playerChoice = 'piedra';
+            document.getElementById("tu").innerHTML = "Piedra";
+            break;
+        case 2:
+            playerChoice = 'papel';
+            document.getElementById("tu").innerHTML = "Papel";
+            break;
+        case 3:
+            playerChoice = 'tijera';
+            document.getElementById("tu").innerHTML = "Tijeras";
+            break;
+        default:
+            alert('Error');
+            location.reload();
     }
 }
 
-cpuSelection();
+function results() {
+    if(playerChoice == 'piedra' && cpuChoice == 'piedra') {
+        alert('Has empatado');
+    }
+    if(playerChoice == 'piedra' && cpuChoice == 'papel') {
+        alert('has perdido');
+    }
+    if(playerChoice == 'piedra' && cpuChoice == 'tijera') {
+        alert('has ganado');
+    }
+    
+    if(playerChoice == 'papel' && cpuChoice == 'piedra') {
+        alert('has ganado');
+    }
+    if(playerChoice == 'papel' && cpuChoice == 'papel') {
+        alert('has empatado');
+    }
+    if(playerChoice == 'papel' && cpuChoice == 'tijera') {
+        alert('has perdido');
+    }
+    
+    if(playerChoice == 'tijera' && cpuChoice == 'piedra') {
+        alert('has perdido');
+    }
+    if(playerChoice == 'tijera' && cpuChoice == 'papel') {
+        alert('has ganado');
+    }
+    if(playerChoice == 'tijera' && cpuChoice == 'tijera') {
+        alert('has empatado');
+    }
+}
 
-function winOrLose () {
-    if(jugador == "piedra" && rival == "papel"){
-        chosenByCpu.innerHTML = "Papel";
-        alert("Has perdido! (Piedra vs Papel)");
-    } else if(jugador == "piedra" && rival == "tijeras"){
-        chosenByCpu.innerHTML = "Tijeras";
-        alert("Has ganado! (Piedra vs Tijeras)");
-    } else if(jugador == "papel" && rival == "tijeras") {
-        chosenByCpu.innerHTML = "Tijeras";
-        alert("Has perdido! (Papel vs Tijeras)");
-    } else if(jugador == "papel" && rival == "piedra") {
-        chosenByCpu.innerHTML = "Piedra";
-        alert("Has ganado! (Papel vs Piedra)");
-    } else if(jugador == "tijeras" && rival == "papel"){
-        chosenByCpu.innerHTML = "Papel";
-        alert("Has ganado! (Tijeras vs Papel)");
-    } else if(jugador == "tijeras" && rival == "piedra"){
-        chosenByCpu.innerHTML = "Piedra";
-        alert("Has perdido! (Tijeras vs Piedra)");
+
+function rps () {
+    if(!playerChoice) {
+        alert('Debes seleccionar una opcion');   
     } else {
-        chosenByCpu.innerHTML = rival;
-        alert("Empate! " + jugador + " " + "vs " + rival);
+        let cpuSelector = Math.floor(Math.random()*10);
+    
+        if(cpuSelector < 3) {
+            cpuChoice = 'piedra';
+        } else if (cpuSelector < 6) {
+            cpuChoice = 'papel';
+        } else if (cpuSelector < 9) {
+            cpuChoice = 'tijera';
+        } 
+
+        switch(cpuChoice) {
+            case 'piedra':
+                document.getElementById("resultadoPc").innerHTML = "Piedra";
+                break;
+            case 'papel':
+                document.getElementById("resultadoPc").innerHTML = "Papel";
+                break;
+            case 'tijera':
+                document.getElementById("resultadoPc").innerHTML = "Tijeras";
+                break;
+        }
+
+        setTimeout(function() {
+            results();
+        },1000)
     }
 }
